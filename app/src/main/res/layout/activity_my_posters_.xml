@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.b1503004.movie_poster.MyPosters_Activity">
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/settings_button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/findPoster_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/findPoster_button"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <Button
+        android:id="@+id/myPosters_button"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:text="@string/myPoster_button"
+
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/findPoster_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/findPoster_button"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+
+    <Button
+        android:id="@+id/findPoster_button"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="21dp"
+        android:text="@string/findPoster_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/myPoster_title"
+        android:textSize="24sp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="36dp" />
+</android.support.constraint.ConstraintLayout>
