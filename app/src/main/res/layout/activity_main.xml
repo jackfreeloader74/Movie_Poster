@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toTopOf="@+id/login_button"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="33dp"
-        app:layout_constraintLeft_toLeftOf="@+id/etName" />
+        app:layout_constraintLeft_toLeftOf="@+id/etUsername" />
 
     <Button
         android:id="@+id/register_button"

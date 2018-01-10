@@ -57,14 +57,14 @@
         android:text="@string/myPoster_button"
         tools:layout_constraintRight_creator="1"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@+id/findPoster_button"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/findPoster_button"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="12dp" />
+        android:layout_marginRight="10dp" />
 
     <Button
         android:id="@+id/settings_button"
@@ -81,4 +81,55 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="3dp" />
+
+    <Button
+        android:id="@+id/xmlButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="218dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="217dp"
+        android:text="XML"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textView"
+        app:layout_constraintRight_toLeftOf="@+id/myPoster_button"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="86dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/xmlButt"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/jsonButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="json"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <Button
+        android:id="@+id/butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="314dp" />
 </android.support.constraint.ConstraintLayout>
