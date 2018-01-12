@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         if(success){
                             int user_id = jsonResponse.getInt("user_id");
-                            Intent in = new Intent(MainActivity.this, FindPoster_Activity.class);
+                            Intent in = new Intent(MainActivity.this, SearchPoster.class);
                             in.putExtra("user_id", user_id);
 
                             startActivity(in);
@@ -81,9 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if(v.getId() == R.id.register_button){
             Intent in;
 
-            in = new Intent(this, RegisterActivity.class);
+            in = new Intent(this, RegisterUser.class);
             startActivity(in);
         }
 
     }
+
+
 }

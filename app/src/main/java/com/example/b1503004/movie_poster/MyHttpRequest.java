@@ -32,16 +32,20 @@ public class MyHttpRequest extends AsyncTask<String, Void, Void> {
     private String returnEntry;
     private boolean finished;
 
+
     public void readResponse(BufferedReader in) {
         String tmp = "";
         StringBuffer response = new StringBuffer();
 
+
         do {
             try {
                 tmp = in.readLine();
-            } catch (IOException ex) {
+            }
+            catch (IOException ex) {
 
             }
+
             if (tmp != null) {
                 response.append(tmp);
             }
@@ -50,7 +54,11 @@ public class MyHttpRequest extends AsyncTask<String, Void, Void> {
         returnEntry = response.toString();
     }
 
-    public void sendPostRequest(String where){
+//================================================================
+
+
+
+    public void sendPostRequest (String where) {
         URL loc = null;
         HttpURLConnection conn = null;
         InputStreamReader is;
@@ -59,84 +67,95 @@ public class MyHttpRequest extends AsyncTask<String, Void, Void> {
         try {
             loc = new URL(where);
         }
-        catch (MalformedURLException ex){
+        catch (MalformedURLException ex) {
             return;
         }
 
         try {
             conn = (HttpURLConnection)loc.openConnection();
-            is = new InputStreamReader(conn.getInputStream(), "UTF-8");
-            in = new BufferedReader(is);
-        }
-         catch (IOException e) {
-            e.printStackTrace();
-        }
+            is = new InputStreamReader (conn.getInputStream(), "UTF-8");
+            in = new BufferedReader (is);
 
+            readResponse (in);
+        }
+        catch (IOException ex) {
+
+        }
         finally {
             conn.disconnect();
         }
+
     }
 
-    public String getReturnEntry(){
-        if (!finished){
+    public String getReturnEntry() {
+        if (!finished) {
             return "Hold tight!";
         }
+
         return returnEntry;
     }
 
     @Override
-    protected void onPostExecute(Void result){
+    protected void onPostExecute(Void result) {
         finished = true;
 
         Log.d("Output", returnEntry);
     }
 
     @Override
-    protected Void doInBackground(String...params){
+    protected Void doInBackground(String... params) {
         finished = false;
         sendPostRequest(params[0]);
         return null;
     }
 
-    public Document getResultsAsDom(){
-        Document xmlDoc = null;
-        DocumentBuilder builder;
 
-        if(finished == false){
+ //================================================
+
+
+    public Document getResultAsDom() {
+        DocumentBuilder builder;
+        Document xmlDoc = null;
+
+        if (finished == false) {
             return null;
         }
+
 
         try {
             builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             xmlDoc = builder.parse(new InputSource(new StringReader(returnEntry)));
         }
-        catch(ParserConfigurationException ex1){
-            Log.d("Output", "Parser problem");
+        catch (ParserConfigurationException ex1) {
+            Log.d ("Output", "Parser problem");
 
-        } catch (SAXException ex2) {
-            Log.d("Output", "SAX problem");
+        }
+        catch (SAXException ex2) {
+            Log.d ("Output", "SAX problem");
 
         }
         catch (IOException ex3) {
-            Log.d("Output", "IO problem: " + ex3.getMessage());
+            Log.d ("Output", "IO problem: " + ex3.getMessage());
+
         }
 
         return xmlDoc;
+
     }
 
-
-    public JSONArray getResultsAsJSON(){
+    public JSONArray getResultAsJSON() {
         JSONArray jarr = null;
 
-        if(finished == false){
+        if (finished == false) {
             return null;
         }
-        try{
+        try {
             jarr = new JSONArray(returnEntry);
         }
-        catch (JSONException ex){
-            Log.d("Output", "Error is " + ex.getMessage());
+        catch (JSONException ex) {
+            Log.d ("Output", "Error is " + ex.getMessage());
         }
         return jarr;
     }
+
 }

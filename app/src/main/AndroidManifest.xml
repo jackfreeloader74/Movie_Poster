@@ -18,14 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindPoster_Activity" />
         <activity android:name=".MyPosters_Activity" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".SettingsActivity$Api_Activity" />
-        <activity android:name=".RetreiveFeed"></activity>
+        <activity android:name=".RetreiveFeed" />
+        <activity android:name=".RegisterUser" />
+        <activity android:name=".SearchPoster" />
+        <activity android:name=".AddMovie"></activity>
     </application>
 
 </manifest>

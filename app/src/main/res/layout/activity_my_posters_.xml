@@ -27,9 +27,9 @@
         android:id="@+id/myPosters_button"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="3dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="3dp"
         android:layout_marginStart="5dp"
         android:text="@string/myPoster_button"
 
@@ -70,4 +70,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="36dp" />
+
+    <Button
+        android:id="@+id/addMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="15dp"
+        android:text="Add Movie"
+        app:layout_constraintBottom_toTopOf="@+id/findPoster_button"
+        app:layout_constraintLeft_toLeftOf="@+id/findPoster_button"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
 </android.support.constraint.ConstraintLayout>

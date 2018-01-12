@@ -15,22 +15,26 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
+import static com.example.b1503004.movie_poster.R.id.etName;
+
+public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_user);
 
-        Button register_button = (Button)this.findViewById(R.id.register_button);
+        Button register_button = (Button) this.findViewById(R.id.register_button);
         register_button.setOnClickListener(this);
+
+        String name;
     }
 
-
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-        final EditText etName = (EditText) this.findViewById(R.id.etUsername);
+
+        final EditText etName = (EditText) this.findViewById(R.id.etName);
         final EditText etPassword = (EditText) this.findViewById(R.id.etPassword);
         final EditText etUsername = (EditText) this.findViewById(R.id.etUsername);
         final EditText etEmail = (EditText) this.findViewById(R.id.etEmail);
@@ -42,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         final String email = etEmail.getText().toString();
 
 
-        if (v.getId() == R.id.register_button) {
+        if (view.getId() == R.id.register_button) {
 
             Response.Listener<String> responseListener = new Response.Listener<String>() {
 
@@ -57,20 +61,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         boolean success = jsonResponse.getBoolean("success");
 
                         if (success) {
-                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                            RegisterActivity.this.startActivity(intent);
+                            Intent intent = new Intent(RegisterUser.this, MainActivity.class);
+                            RegisterUser.this.startActivity(intent);
 
                         } else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterUser.this);
                             builder.setMessage("Register Failed").setNegativeButton("Retry", null).create().show();
-
-
                         }
-
-
                     } catch (JSONException e) {
-
-
                         e.printStackTrace();
                     }
 
@@ -80,31 +78,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             };
 
-
             RegisterRequest registerRequest = new RegisterRequest(name, username, password, email, responseListener);
 
-            RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+            RequestQueue queue = Volley.newRequestQueue(RegisterUser.this);
 
 
             queue.add(registerRequest);
 
-
         }
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
