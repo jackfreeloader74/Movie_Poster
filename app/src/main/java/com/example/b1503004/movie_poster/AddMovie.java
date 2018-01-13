@@ -41,7 +41,7 @@ public class AddMovie extends AppCompatActivity implements View.OnClickListener{
 
             Toast.makeText(getBaseContext(), "Movie Saved", Toast.LENGTH_LONG).show();
             movieDbHelper.close();
-            
+
 
         }
 

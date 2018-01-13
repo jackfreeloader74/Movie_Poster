@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
 
 public class SearchPoster extends AppCompatActivity implements View.OnClickListener {
 
-    Button find_poster, myPosters, settings_button, butt, jsonButt, xmlButt;
+    Button find_poster, myPosters, settingsButton, butt, jsonButt, xmlButt;
     TextView output;
     EditText etMovie;
     MyHttpRequest task, task2;
@@ -41,6 +41,8 @@ public class SearchPoster extends AppCompatActivity implements View.OnClickListe
         butt = (Button)this.findViewById(R.id.cmdRequest);
         butt.setOnClickListener(this);
 
+        settingsButton = (Button)this.findViewById(R.id.settingsButton);
+        settingsButton.setOnClickListener(this);
 
         myPosters = (Button)this.findViewById(R.id.myPosters);
         myPosters.setOnClickListener(this);
@@ -57,12 +59,14 @@ public class SearchPoster extends AppCompatActivity implements View.OnClickListe
             if (task == null) {
 
                 String search = etMovie.getText().toString();
-                https://api.themoviedb.org/3/search/movie?api_key=a12071111b5bcd7d74000849b4b7fa7f&language=en-US&query=&page=1&include_adult=false
+
                 task = new MyHttpRequest();
                 task.execute("https://boardgamegeek.com/xmlapi/collection/drakkos");
 
+
+                //Api search link, etMovie is the edit text where the user enters what movie they want
                 task2 = new MyHttpRequest();
-                task2.execute("https://bgg-json.azurewebsites.net/collection/drakkos");
+                task2.execute("https://api.themoviedb.org/3/search/movie?api_key=a12071111b5bcd7d74000849b4b7fa7f&query="+etMovie.getText().toString());
 
             }
 
@@ -94,6 +98,7 @@ public class SearchPoster extends AppCompatActivity implements View.OnClickListe
                 }
             }
             else if (view == jsonButt) {
+               etMovie.setVisibility(View.GONE);
                 JSONObject tmp;
                 try {
                     jarr = task2.getResultAsJSON();
@@ -121,9 +126,19 @@ public class SearchPoster extends AppCompatActivity implements View.OnClickListe
 
             }
 
+
+            //when user presses this button they are taken to my movies activity
             else if(view == myPosters){
                 Intent in;
                 in = new Intent(SearchPoster.this, MyPosters_Activity.class);
+                startActivity(in);
+            }
+
+
+            //When user presses the settings button they are taken to the settigns page (preferences)
+            else if(view == settingsButton){
+                Intent in;
+                in = new Intent(SearchPoster.this, SettingsActivity.class);
                 startActivity(in);
             }
         }

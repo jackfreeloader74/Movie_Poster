@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import static com.example.b1503004.movie_poster.R.id.etPassword;
 import static com.example.b1503004.movie_poster.R.id.etUsername;
 
+//This is the login activity and the first screen the user is presented with
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     static EditText etUsername;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String username = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
 
-
+        //When user clicks login button, the app uses the php file to add the user to the table of users
         if (v.getId()  == R.id.login_button){
 
             Response.Listener<String> responseListener = new Response.Listener<String>(){
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
 
                         else{
+
+                            //Error handling (if user enters incorrect details, a message will be displayed)
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setMessage("LoginFailed").setNegativeButton("Retry", null).create().show();
                         }
@@ -78,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
             queue.add(loginRequest);
 
+
+            //When user presses register Button, it takes them to register activity
         } else if(v.getId() == R.id.register_button){
             Intent in;
 

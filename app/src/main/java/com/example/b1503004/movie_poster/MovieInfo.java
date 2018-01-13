@@ -4,6 +4,8 @@ package com.example.b1503004.movie_poster;
  * Created by marc on 12/01/2018.
  */
 
+//Holds the columns for a movie object (title and genre)
+
 public class MovieInfo {
 
         public static abstract class NewMovieInfo{

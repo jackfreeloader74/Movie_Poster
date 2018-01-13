@@ -11,6 +11,7 @@ import java.util.Map;
  * Created by 1503004 on 08/12/2017.
  */
 
+//Connecting to register php file
 public class RegisterRequest extends StringRequest {
 
     private static final String REGISTER_REQUEST_URL = "https://textbookapp.000webhostapp.com/Register.php";

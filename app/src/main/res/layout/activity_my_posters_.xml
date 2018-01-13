@@ -61,15 +61,15 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/myPoster_title"
-        android:textSize="24sp"
-        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="36dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="44dp"
-        tools:layout_constraintLeft_creator="1"
+        android:text="My Movies"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="36dp" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/addMovie"

@@ -10,6 +10,8 @@ import java.util.Map;
  * Created by marc on 05/01/2018.
  */
 
+//References the php when user tries to login
+
 public class LoginRequest extends StringRequest {
 
     private static final String LOGIN_REQUEST_URL = "https://textbookapp.000webhostapp.com/Login.php";
